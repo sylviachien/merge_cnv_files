@@ -1,0 +1,37 @@
+[general]
+
+bedtools = /opt/bedtools2/bin/bedtools
+chrLenFile = /sbgenomics/Projects/0d1af8fa-578c-467a-a42a-16a64b81d472/CNV_Reference/no_m_homo_sapiens_assembly38.fasta.sizes
+chrFiles = .
+window = 0
+maxThreads = 8
+SambambaThreads = 8
+noisyData = true
+ploidy = 2
+sambamba = /opt/sambamba_0.5.9/sambamba_v0.5.9
+samtools = /opt/samtools-1.3.1/samtools
+sex = XY
+
+[sample]
+
+mateFile = /sbgenomics/workspaces/0d1af8fa-578c-467a-a42a-16a64b81d472/tasks/69a4dbc5-2b60-4f74-aec2-4a1b972782f7/index_tumor/sampleA.bam
+miniPileup = /sbgenomics/workspaces/0d1af8fa-578c-467a-a42a-16a64b81d472/tasks/69a4dbc5-2b60-4f74-aec2-4a1b972782f7/control_freec_loh_11_5_samtools_mpileup_parallel_1_6_tumor_sbg_samtools_merge_mpileup/sampleA_chr1.merged.pileup
+inputFormat = bam
+mateOrientation = FR
+
+[control]
+
+mateFile = /sbgenomics/workspaces/0d1af8fa-578c-467a-a42a-16a64b81d472/tasks/69a4dbc5-2b60-4f74-aec2-4a1b972782f7/index_normal/sampleB.bam
+miniPileup = /sbgenomics/workspaces/0d1af8fa-578c-467a-a42a-16a64b81d472/tasks/69a4dbc5-2b60-4f74-aec2-4a1b972782f7/control_freec_loh_11_5_samtools_mpileup_parallel_1_6_normal_sbg_samtools_merge_mpileup/sampleB_chr1.merged.pileup
+inputFormat = bam
+mateOrientation = FR
+
+[BAF]
+
+SNPfile = /sbgenomics/workspaces/0d1af8fa-578c-467a-a42a-16a64b81d472/tasks/69a4dbc5-2b60-4f74-aec2-4a1b972782f7/bcftools_filter/sampleB.filtered.vcf
+makePileup = /sbgenomics/workspaces/0d1af8fa-578c-467a-a42a-16a64b81d472/tasks/69a4dbc5-2b60-4f74-aec2-4a1b972782f7/bcftools_filter/sampleB.filtered.vcf
+fastaFile = /sbgenomics/workspaces/0d1af8fa-578c-467a-a42a-16a64b81d472/tasks/69a4dbc5-2b60-4f74-aec2-4a1b972782f7/sbg_fasta_indices/GRCh38_primary_assembly_plus_alt_decoy_hla.fasta
+
+[target]
+
+captureRegions = /sbgenomics/Projects/0d1af8fa-578c-467a-a42a-16a64b81d472/CNV_Reference/S07604514_Regions_v6_hg38_Targets.bed
