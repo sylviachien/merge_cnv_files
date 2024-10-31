@@ -11,27 +11,27 @@ requirements:
   InitialWorkDirRequirement:
     listing:
       - writable: false  
-        entry: $(inputs.gatk_modelfinal_seg)
+        entry: $(inputs.gatk_called_seg_files)
       - writable: false
-        entry: $(inputs.gatk_call_seg)
+        entry: $(inputs.gatk_modelFinal_seg_files)
       - writable: false
-        entry: $(inputs.controlfreec_cn_pvalue)
+        entry: $(inputs.controlfreec_pvalue_files)
       - writable: false
-        entry: $(inputs.sclust_cn_summary)
+        entry: $(inputs.sclust_iCN_seg_files)
       - writable: false
-        entry: $(inputs.sclust_allelic_states)
+        entry: $(inputs.sclust_uncorr_cn_seg_files)
       - writable: false
-        entry: $(inputs.sclust_subclonal_cn)
+        entry: $(inputs.sclust_cn_summary_files)
       - writable: false
-        entry: $(inputs.sclust_uncorr_cn_seg)
+        entry: $(inputs.sclust_allelic_states_files)
       - writable: false
-        entry: $(inputs.sclust_icn_seg)
+        entry: $(inputs.sclust_sub_clonal_cn_files)
       - writable: false
-        entry: $(inputs.sclust_mclusters)
+        entry: $(inputs.sclust_mclusters_files)
       - writable: false
-        entry: $(inputs.sclust_cluster_assignments)
+        entry: $(inputs.sclust_cluster_assignment_files)
       - writable: false
-        entry: $(inputs.conseca)
+        entry: $(inputs.conseca_files)
       - entryname: merge_cnv_files.py
         entry: |-
           import os
@@ -202,79 +202,79 @@ inputs:
     label: GATK called seg files
     doc: GATK segmentation files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --gatk_call_seg
+    #inputBinding:
+    #  position: 1
+    #  prefix: --gatk_call_seg
   gatk_modelFinal_seg_files:
     label: GATK modelFinal seg files
     doc: GATK modelFinal segmentation files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --gatk_modelfinal_seg
+    #inputBinding:
+    #  position: 2
+    #  prefix: --gatk_modelfinal_seg
   controlfreec_pvalue_files:
     label: ControlFREEC p-value files
     doc: ControlFREEC p-value files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --controlfreec_cn_pvalue
+    #inputBinding:
+    #  position: 3
+    #  prefix: --controlfreec_cn_pvalue
   sclust_iCN_seg_files:
     label: Sclust iCN seg files
     doc: Sclust iCN segmentation files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --sclust_icn_seg
+    #inputBinding:
+    #  position: 4
+    #  prefix: --sclust_icn_seg
   sclust_uncorr_cn_seg_files:
     label: Sclust uncorrected CN seg files
     doc: Sclust uncorrected CN segmentation files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --sclust_uncorr_cn_seg
+    #inputBinding:
+    #  position: 5
+    #  prefix: --sclust_uncorr_cn_seg
   sclust_cn_summary_files:
     label: Sclust CN summary files
     doc: Sclust CN summary files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --sclust_cn_summary
+    #inputBinding:
+    #  position: 6
+    #  prefix: --sclust_cn_summary
   sclust_allelic_states_files:
     label: Sclust allelic states files
     doc: Sclust allelic states files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --sclust_allelic_states
+    #inputBinding:
+    #  position: 7
+    #  prefix: --sclust_allelic_states
   sclust_sub_clonal_cn_files:
     label: Sclust sub clonal CN files
     doc: Sclust sub clonal CN files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --sclust_subclonal_cn
+    #inputBinding:
+    #  position: 8
+    #  prefix: --sclust_subclonal_cn
   sclust_mclusters_files:
     label: Sclust mclusters files
     doc: Sclust mclusters files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --sclust_mclusters
+    #inputBinding:
+    #  position: 9
+    #  prefix: --sclust_mclusters
   sclust_cluster_assignment_files:
     label: Sclust cluster assignment files
     doc: Sclust cluster assignment files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --sclust_cluster_assignment
+    #inputBinding:
+    #  position: 10
+    #  prefix: --sclust_cluster_assignment
   conseca_files:
     label: Conseca files
     doc: Conseca files
     type: File[]?
-    inputBinding:
-      position: 0
-      prefix: --conseca
+    #inputBinding:
+    #  position: 11
+    #  prefix: --conseca
 
 outputs:
   merged_gatk_called_seg:
