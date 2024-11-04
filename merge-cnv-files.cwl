@@ -55,20 +55,28 @@ requirements:
               '''
               # Extract the filename from the file path
               filename = os.path.basename(filepath)
-              # count  the number of '.' in the filename
-              dot_count = filename.count('.')
-              # split the filename based on the condition
-              if dot_count > 1:
-              # use '.' as the separator
-                  parts = filename.split('.')
-                  sample_name = parts[0]
-                  suffix = '.'.join(parts[1:])
-              else:
-                  # use '_' as the separator
-                  parts = filename.split('_')
-                  sample_name = parts[0]
-                  suffix = '_'.join(parts[1:])
-              return sample_name, suffix
+              # Known suffixes to check against
+              known_suffixes = [
+                "GATK.CNV-loh.modelFinal.seg",
+                "GATK.CNV-loh.called.seg",
+                "FREEC.CNV-loh.p.value.txt",
+                "cn_summary.txt",
+                "allelic_states.txt",
+                "subclonal_cn.txt",
+                "uncorr_cn.seg",
+                "iCN.seg",
+                "mclusters.txt",
+                "cluster_assignments.txt",
+                "CNV-loh.Conseca.tsv"
+              ]
+              # Check if the filename ends with any known suffix
+              for suffix in known_suffixes:
+                  if filename.endswith(suffix):
+                      # Extract sample name by removing the suffix from the end
+                      sample_name = filename[: -len(suffix)].rstrip('.').rstrip('_')
+                      return sample_name, suffix
+              # if no known suffx is found, return None
+              return None, None
 
           def merge_files_with_sample_column(file_paths):
               ''' To generate a merged file from individual files with an additional sample column '''
@@ -147,7 +155,7 @@ requirements:
               #parser.add_argument('--sclust_icn_seg', nargs='+', type=str, help="List of Sclust iCN.seg file paths separated by space")
               #parser.add_argument('--sclust_mclusters', nargs='+', type=str, help="List of Sclust mclusters file paths separated by space")
               #parser.add_argument('--sclust_cluster_assignments', nargs='+', type=str, help="List of Sclust cluster_assignments file paths separated by space")
-              parser.add_argument('--conseca', nargs='+', type=str, help="List of conseca file paths separated by space")
+              #parser.add_argument('--conseca', nargs='+', type=str, help="List of conseca file paths separated by space")
               return parser.parse_args()
 
           def main():
