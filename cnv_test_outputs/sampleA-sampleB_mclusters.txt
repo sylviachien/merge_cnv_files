@@ -1,3 +1,0 @@
-Cluster_ID	CCF_Cluster	Cluster_Peak_Height	Mutations_In_Cluster
-0	0.916219	3.92422	126
-1	0.268462	8.31315	145

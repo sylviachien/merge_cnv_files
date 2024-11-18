@@ -1,2 +1,0 @@
-sample	sample_name	purity	ploidy	fraction_subclonal_cn	sex_estimated	status	fraction_inconsistent_segs
-sampleA-sampleB	sampleA	0.42	4.19235	0.0399368	m	optimum	0
