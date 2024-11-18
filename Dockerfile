@@ -11,9 +11,9 @@ RUN chmod +x /opt/merge_cnv_files.py
 RUN python3 -m pip install --upgrade pip
 RUN pip install pandas 
 RUN pip install argparse 
-#RUN pip install io 
-#RUN pip install logging 
-#RUN pip install glob
+RUN pip install io
+RUN pip install logging
+RUN pip install glob
 
 # Command to run the script
-#CMD ["python3","/opt/merge_cnv_files.py"]
+CMD ["python3","/opt/merge_cnv_files.py"]
