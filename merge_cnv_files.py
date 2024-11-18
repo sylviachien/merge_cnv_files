@@ -108,18 +108,6 @@ def parse_arguments():
     - args: parsed arguments
     '''
     parser = argparse.ArgumentParser(description="Merge different CNV files with sample id column")
-    # optional arguments for different types of CNV files
-    #parser.add_argument('--gatk_modelfinal_seg', nargs='+', type=str, help="List of GATK modelFinal.seg file paths separated by space")
-    #parser.add_argument('--gatk_call_seg', nargs='+', type=str, help="List of GATK called.seg file paths separated by space")
-    #parser.add_argument('--controlfreec_cn_pvalue', nargs='+', type=str, help="List of Control-FREEC CNV-loh.p.value file paths separated by space")
-    #parser.add_argument('--sclust_cn_summary', nargs='+', type=str, help="List of Sclust cn_summary file paths separated by space")
-    #parser.add_argument('--sclust_allelic_states', nargs='+', type=str, help="List of Sclust allelic_states file paths separated by space")
-    #parser.add_argument('--sclust_subclonal_cn', nargs='+', type=str, help="List of Sclust subclonal_cn file paths separated by space")
-    #parser.add_argument('--sclust_uncorr_cn_seg', nargs='+', type=str, help="List of Sclust uncorr_cn.seg file paths separated by space")
-    #parser.add_argument('--sclust_icn_seg', nargs='+', type=str, help="List of Sclust iCN.seg file paths separated by space")
-    #parser.add_argument('--sclust_mclusters', nargs='+', type=str, help="List of Sclust mclusters file paths separated by space")
-    #parser.add_argument('--sclust_cluster_assignments', nargs='+', type=str, help="List of Sclust cluster_assignments file paths separated by space")
-    #parser.add_argument('--conseca', nargs='+', type=str, help="List of conseca file paths separated by space")
     return parser.parse_args()
 
 def main():
