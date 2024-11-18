@@ -144,18 +144,6 @@ requirements:
               - args: parsed arguments
               '''
               parser = argparse.ArgumentParser(description="Merge different CNV files with sample id column")
-              # optional arguments for different types of CNV files
-              #parser.add_argument('--gatk_modelfinal_seg', nargs='+', type=str, help="List of GATK modelFinal.seg file paths separated by space")
-              #parser.add_argument('--gatk_call_seg', nargs='+', type=str, help="List of GATK called.seg file paths separated by space")
-              #parser.add_argument('--controlfreec_cn_pvalue', nargs='+', type=str, help="List of Control-FREEC CNV-loh.p.value file paths separated by space")
-              #parser.add_argument('--sclust_cn_summary', nargs='+', type=str, help="List of Sclust cn_summary file paths separated by space")
-              #parser.add_argument('--sclust_allelic_states', nargs='+', type=str, help="List of Sclust allelic_states file paths separated by space")
-              #parser.add_argument('--sclust_subclonal_cn', nargs='+', type=str, help="List of Sclust subclonal_cn file paths separated by space")
-              #parser.add_argument('--sclust_uncorr_cn_seg', nargs='+', type=str, help="List of Sclust uncorr_cn.seg file paths separated by space")
-              #parser.add_argument('--sclust_icn_seg', nargs='+', type=str, help="List of Sclust iCN.seg file paths separated by space")
-              #parser.add_argument('--sclust_mclusters', nargs='+', type=str, help="List of Sclust mclusters file paths separated by space")
-              #parser.add_argument('--sclust_cluster_assignments', nargs='+', type=str, help="List of Sclust cluster_assignments file paths separated by space")
-              #parser.add_argument('--conseca', nargs='+', type=str, help="List of conseca file paths separated by space")
               return parser.parse_args()
 
           def main():
@@ -210,79 +198,46 @@ inputs:
     label: GATK called seg files
     doc: GATK segmentation files
     type: File[]?
-    #inputBinding:
-    #  position: 1
-    #  prefix: --gatk_call_seg
   gatk_modelFinal_seg_files:
     label: GATK modelFinal seg files
     doc: GATK modelFinal segmentation files
     type: File[]?
-    #inputBinding:
-    #  position: 2
-    #  prefix: --gatk_modelfinal_seg
   controlfreec_pvalue_files:
     label: ControlFREEC p-value files
     doc: ControlFREEC p-value files
     type: File[]?
-    #inputBinding:
-    #  position: 3
-    #  prefix: --controlfreec_cn_pvalue
   sclust_iCN_seg_files:
     label: Sclust iCN seg files
     doc: Sclust iCN segmentation files
     type: File[]?
-    #inputBinding:
-    #  position: 4
-    #  prefix: --sclust_icn_seg
   sclust_uncorr_cn_seg_files:
     label: Sclust uncorrected CN seg files
     doc: Sclust uncorrected CN segmentation files
     type: File[]?
-    #inputBinding:
-    #  position: 5
-    #  prefix: --sclust_uncorr_cn_seg
   sclust_cn_summary_files:
     label: Sclust CN summary files
     doc: Sclust CN summary files
     type: File[]?
-    #inputBinding:
-    #  position: 6
-    #  prefix: --sclust_cn_summary
   sclust_allelic_states_files:
     label: Sclust allelic states files
     doc: Sclust allelic states files
     type: File[]?
-    #inputBinding:
-    #  position: 7
-    #  prefix: --sclust_allelic_states
   sclust_sub_clonal_cn_files:
     label: Sclust sub clonal CN files
     doc: Sclust sub clonal CN files
     type: File[]?
-    #inputBinding:
-    #  position: 8
-    #  prefix: --sclust_subclonal_cn
   sclust_mclusters_files:
     label: Sclust mclusters files
     doc: Sclust mclusters files
     type: File[]?
-    #inputBinding:
-    #  position: 9
-    #  prefix: --sclust_mclusters
   sclust_cluster_assignment_files:
     label: Sclust cluster assignment files
     doc: Sclust cluster assignment files
     type: File[]?
-    #inputBinding:
-    #  position: 10
-    #  prefix: --sclust_cluster_assignment
   conseca_files:
     label: Conseca files
     doc: Conseca files
     type: File[]?
-    #inputBinding:
-    #  position: 11
-    #  prefix: --conseca
 
 outputs:
   merged_gatk_called_seg:
