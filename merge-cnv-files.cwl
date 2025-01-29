@@ -4,7 +4,7 @@ label: Merge CNV Result Files
 
 hints:
   DockerRequirement:
-    dockerPull: bms-images.sbgenomics.com/bristol-myers-squibb/merge_cnv_files:latest
+    dockerPull: bms-images.sbgenomics.com/bristol-myers-squibb/merge-cnv-files:0.0.1
 
 requirements:
   InlineJavascriptRequirement: {}
